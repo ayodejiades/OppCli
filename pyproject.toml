@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oppcli"
+version = "1.0.0"
+description = "OpportunityCLI — find scholarships, fellowships & hackathons for African students."
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    { name = "Ayodeji", email = "ayodejiadesegun20@gmail.com" },
+]
+dependencies = [
+    "rich>=13.0.0",
+    "typer>=0.9.0",
+    "httpx>=0.24.0",
+    "beautifulsoup4>=4.12.0",
+    "playwright>=1.40.0",
+]
+
+[project.scripts]
+oppcli = "oppcli.main:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["oppcli*"]
+
+[tool.setuptools.package-data]
+oppcli = ["data/*.json"]
